@@ -10,19 +10,23 @@ class SourceFile < Thor
     filtered_tags = fetch_tags
     tag = select('Which tag do you want to fetch?', filtered_tags)
     self.destination_root = 'vendor/assets'
-    remote = 'https://github.com/vakata/jstree'
+    remote = 'https://raw.githubusercontent.com/vakata/jstree'
     # IMAGES
-    get "#{remote}/raw/#{tag}/dist/themes/default/32px.png", 'images/default/32px.png'
-    get "#{remote}/raw/#{tag}/dist/themes/default/40px.png", 'images/default/40px.png'
-    get "#{remote}/raw/#{tag}/dist/themes/default/throbber.gif", 'images/default/throbber.gif'
-    get "#{remote}/raw/#{tag}/dist/themes/default-dark/32px.png", 'images/default-dark/32px.png'
-    get "#{remote}/raw/#{tag}/dist/themes/default-dark/40px.png", 'images/default-dark/40px.png'
-    get "#{remote}/raw/#{tag}/dist/themes/default-dark/throbber.gif", 'images/default-dark/throbber.gif'
+    get "#{remote}/#{tag}/dist/themes/default/32px.png", 'images/default/32px.png'
+    get "#{remote}/#{tag}/dist/themes/default/40px.png", 'images/default/40px.png'
+    get "#{remote}/#{tag}/dist/themes/default/throbber.gif", 'images/default/throbber.gif'
+    get "https://raw.githubusercontent.com/vakata/jstree/3.3.8/dist/themes/default-dark/32px.png", 'images/default-dark/32px.png'
+    #get "#{remote}/#{tag}/dist/themes/default-dark/32px.png", 'images/default-dark/32px.png'
+    get "https://raw.githubusercontent.com/vakata/jstree/3.3.8/dist/themes/default-dark/40px.png", 'images/default-dark/40px.png'
+    #get "#{remote}/#{tag}/dist/themes/default-dark/40px.png", 'images/default-dark/40px.png'
+    get "https://raw.githubusercontent.com/vakata/jstree/3.3.8/dist/themes/default-dark/throbber.gif", 'images/default-dark/throbber.gif'
+    #get "#{remote}/#{tag}/dist/themes/default-dark/throbber.gif", 'images/default-dark/throbber.gif'
     # CSS
-    get "#{remote}/raw/#{tag}/dist/themes/default/style.css", 'stylesheets/jstree-default.scss'
-    get "#{remote}/raw/#{tag}/dist/themes/default-dark/style.css", 'stylesheets/jstree-default-dark.scss'
+    get "#{remote}/#{tag}/dist/themes/default/style.css", 'stylesheets/jstree-default.scss'
+    get "https://raw.githubusercontent.com/vakata/jstree/3.3.8/dist/themes/default-dark/style.css", 'stylesheets/jstree-default-dark.scss'
+    #get "#{remote}/#{tag}/dist/themes/default-dark/style.css", 'stylesheets/jstree-default-dark.scss'
     # JS
-    get "#{remote}/raw/#{tag}/dist/jstree.js", 'javascripts/jstree.js'
+    get "#{remote}/#{tag}/dist/jstree.js", 'javascripts/jstree.js'
   end
 
   desc 'convert css to use rails paths', 'make css use rails paths'

@@ -17,6 +17,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "json", "~> 2.0.3"
   s.add_development_dependency "thor", "~> 0.19"
-  s.add_development_dependency "bundler", "~> 1.14"
+  s.add_development_dependency "bundler", "~> 2.1"
   s.add_development_dependency "httpclient", "~> 2.8.3"
 end
